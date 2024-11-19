@@ -6,3 +6,7 @@
 - [ ] Make API more accessible 
 - [ ] Expose features that might be important for ML
 
+
+## How to 
+
+Run `display.py` to see a game played with random moves
