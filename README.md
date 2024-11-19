@@ -1,6 +1,8 @@
 ## TODOs
 
-- [ ] Figure out how pygame works
-- [ ] Implement dots-and-boxes 
-- [ ] Render the game using pygame
+- [X] Figure out how pygame works
+- [X] Implement dots-and-boxes 
+- [X] Render the game using pygame
+- [ ] Make API more accessible 
+- [ ] Expose features that might be important for ML
 
