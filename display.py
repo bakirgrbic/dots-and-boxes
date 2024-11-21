@@ -1,9 +1,9 @@
 from random import randrange
 import pygame
 
-from game import Game
+from game import DotsAndBoxes
 
-def random_move(game: Game):
+def random_move(game: DotsAndBoxes):
     lines = list(range(200))
     remaining_lines = list(filter(lambda line: game.is_possible(line), lines))
     size = len(remaining_lines)
@@ -23,7 +23,7 @@ COLOR_EMPTY = [255, 255, 255]
 COLOR_PLAYER1 = [255, 0, 0]
 COLOR_PLAYER2 = [0, 0, 255]
 
-def draw_board(game: Game, screen):
+def draw_board(game: DotsAndBoxes, screen):
     pygame.draw.rect(screen, COLOR_GRID, [TOP_X, TOP_Y, WIDTH, HEIGHT])
 
     for row in range(10):
@@ -70,8 +70,8 @@ def draw_board(game: Game, screen):
                 ] 
                 pygame.draw.rect(screen, color, edge_rect)
 
-def start_game():
-    game = Game()
+if __name__ == "__main__":
+    game = DotsAndBoxes()
     pygame.init()
     pygame.display.set_caption('Dots & Boxes')
     screen = pygame.display.set_mode((400, 400))
@@ -95,7 +95,3 @@ def start_game():
         clock.tick(60)
 
     pygame.quit()
-
-
-if __name__ == "__main__":
-    start_game()

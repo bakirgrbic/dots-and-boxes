@@ -42,19 +42,20 @@ class Board:
         return (self.layout[row * 10 + column] & (1 << shift)) > 0
 
 
-class Game:
+class DotsAndBoxes:
     def __init__(self):
         self.board = Board()
         self.game_info = GameInfo()
+        self.legal_moves = set(range(200))
 
     def get_line(self, num, player):
         box_num = num // 2
         row = box_num // 10
         col = box_num % 10
         side = num % 2
-        return self.get_line_by(row, col, side, player)
+        return self._get_line_by(row, col, side, player)
 
-    def get_line_by(self, row, column, side, player):
+    def _get_line_by(self, row, column, side, player):
         return self.board.get_bit(row, column, side + (4 * (player % 2)))
 
     def set_line(self, num, player):
@@ -62,9 +63,10 @@ class Game:
         row = box_num // 10
         col = box_num % 10
         side = num % 2
-        self.set_line_by(row, col, side, player)
+        self.legal_moves.remove(num)
+        self._set_line_by(row, col, side, player)
 
-    def set_line_by(self, row, column, side, player):
+    def _set_line_by(self, row, column, side, player):
         self.board.set_bit(row, column, side + (4 * (player % 2)))
         self.check_box(row, column, player)
 
@@ -91,3 +93,4 @@ class Game:
 
     def is_possible(self, line):
         return not (self.get_line(line, PLAYER_ONE) or self.get_line(line, PLAYER_TWO))
+    
