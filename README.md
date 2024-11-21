@@ -10,3 +10,5 @@
 ## How to 
 
 Run `display.py` to see a game played with random moves
+
+Run `pip install -e dots_and_boxes` to use custom environment.
