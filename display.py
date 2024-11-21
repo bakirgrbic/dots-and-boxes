@@ -4,12 +4,10 @@ import pygame
 from game import DotsAndBoxes
 
 def random_move(game: DotsAndBoxes):
-    lines = list(range(200))
-    remaining_lines = list(filter(lambda line: game.is_possible(line), lines))
-    size = len(remaining_lines)
+    size = len(game.legal_moves)
     if size == 0:
         return False
-    line = remaining_lines[randrange(size)]
+    line = list(game.legal_moves)[randrange(size)]
     game.set_line(line, game.game_info.turn)
     return True
 

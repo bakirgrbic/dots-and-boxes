@@ -46,7 +46,7 @@ class DotsAndBoxes:
     def __init__(self):
         self.board = Board()
         self.game_info = GameInfo()
-        self.legal_moves = set(range(200))
+        self.legal_moves = set(filter(lambda line: self.is_possible(line), range(200)))
 
     def get_line(self, num, player):
         box_num = num // 2
