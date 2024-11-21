@@ -1,4 +1,4 @@
-from gym import register
+from gym.envs.registration import register
 
 
 register(

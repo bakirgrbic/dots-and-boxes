@@ -1,8 +1,8 @@
 import gym
 import pygame
 
-from display import draw_board
-import game 
+from dots_and_boxes import game
+from dots_and_boxes.display import draw_board
 
 class DotsAndBoxes(gym.Env):
     metadata = {"render_modes": ["human"]}
@@ -25,7 +25,7 @@ class DotsAndBoxes(gym.Env):
         self.game = None
 
     def reset(self) -> game.Board:
-        self.game = game.DotsAndBoxes()
+        self.game = game.DotsAndBoxesGame()
         self.screen = None
         self.clock = None
         self.running = False

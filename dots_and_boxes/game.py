@@ -42,7 +42,7 @@ class Board:
         return (self.layout[row * 10 + column] & (1 << shift)) > 0
 
 
-class DotsAndBoxes:
+class DotsAndBoxesGame:
     def __init__(self):
         self.board = Board()
         self.game_info = GameInfo()

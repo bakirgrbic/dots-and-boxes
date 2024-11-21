@@ -1,9 +1,11 @@
 from random import randrange
 import pygame
 
-from game import DotsAndBoxes
+from dots_and_boxes.game import DotsAndBoxesGame
 
-def random_move(game: DotsAndBoxes):
+
+
+def random_move(game: DotsAndBoxesGame):
     size = len(game.legal_moves)
     if size == 0:
         return False
@@ -21,7 +23,7 @@ COLOR_EMPTY = [255, 255, 255]
 COLOR_PLAYER1 = [255, 0, 0]
 COLOR_PLAYER2 = [0, 0, 255]
 
-def draw_board(game: DotsAndBoxes, screen):
+def draw_board(game: DotsAndBoxesGame, screen):
     pygame.draw.rect(screen, COLOR_GRID, [TOP_X, TOP_Y, WIDTH, HEIGHT])
 
     for row in range(10):
