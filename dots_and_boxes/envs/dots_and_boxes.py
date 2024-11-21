@@ -1,10 +1,10 @@
-import gymnasium
+import gym
 import pygame
 
 from display import draw_board
 import game 
 
-class DotsAndBoxes(gymnasium.Env):
+class DotsAndBoxes(gym.Env):
     metadata = {"render_modes": ["human"]}
     action_space = None
     observation_space = None

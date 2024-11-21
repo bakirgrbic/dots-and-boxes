@@ -1,0 +1,1 @@
+from dots_and_boxes.envs.dots_and_boxes import DotsAndBoxes
