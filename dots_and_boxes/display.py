@@ -71,7 +71,7 @@ def draw_board(game: DotsAndBoxesGame, screen):
                 pygame.draw.rect(screen, color, edge_rect)
 
 if __name__ == "__main__":
-    game = DotsAndBoxes()
+    game = DotsAndBoxesGame()
     pygame.init()
     pygame.display.set_caption('Dots & Boxes')
     screen = pygame.display.set_mode((400, 400))
